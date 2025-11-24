@@ -309,13 +309,15 @@ ul {
     width: 60px;
     height: 4px;
     background: var(--primary);
+    margin: 0.5rem auto 0;
 }
 
 .stats {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    margin-top: 3rem;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -327,7 +329,7 @@ ul {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary);
-    font-family: 'Outfit', sans-serif;
+    margin-bottom: 0.5rem;
 }
 
 .stat-label {
@@ -335,7 +337,34 @@ ul {
     font-weight: 500;
 }
 
-/* Experience Timeline */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.job-info {
+    flex-grow: 1;
+}
+
+.job-header h3 {
+    margin-bottom: 0.25rem;
+}
+
+.job-header h4 {
+    margin-bottom: 0;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.company-logo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    margin-left: 1rem;
+}
+
 .timeline {
     position: relative;
     max-width: 800px;
