@@ -1,0 +1,447 @@
+</header>
+
+<div class="layout">
+  <!-- TOC -->
+  <aside class="toc">
+    <div class="toc-title">On this page</div>
+    <ul>
+      <li class="main"><a href="#overview">1. Release overview</a></li>
+      <li class="main"><a href="#composer">2. Composer (GA)</a></li>
+      <li class="sub"><a href="#composer-capabilities">Key capabilities</a></li>
+      <!-- ARTICLE -->
+      <main class="article">
+        <section class="intro" id="overview">
+          Appian 25.4 is a big push toward AI-native process automation. It combines
+          generative AI, agents, and data fabric scale with practical improvements in
+          design, monitoring, and administration. This article is written like a
+          knowledge article / blog that you can reuse internally or share with teammates.
+        </section>
+
+        <div class="tag-row">
+          <span class="tag">Composer GA</span>
+          <span class="tag">Agent Studio</span>
+          <span class="tag">AI Copilot & Chat</span>
+          <span class="tag">Data Fabric 50M rows</span>
+          <span class="tag">Process HQ</span>
+          <span class="tag">Autoscale</span>
+          <span class="tag">RPA</span>
+          <span class="tag">Control Panel</span>
+          <span class="tag">Interfaces</span>
+          <span class="tag">Mobile</span>
+          <span class="tag">Admin Console</span>
+        </div>
+
+        <!-- Composer -->
+        <section class="section" id="composer">
+          <div class="section-label">AI Copilot for developers</div>
+          <h2>2. Composer &mdash; from requirements to app blueprint</h2>
+          <p class="section-lead">
+            Composer is Appian’s AI-powered planning assistant. In 25.4, it becomes a first-class,
+            generally available feature for turning requirement documents into a structured Appian application plan.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Composer &mdash; Requirements to Application Plan</div>
+            </div>
+            <img src="https://docs.appian.com/suite/help/25.4/images/rn-25.4/composer.png" alt="Composer main screen" />
+            <figcaption>Example view of Composer generating an application plan from uploaded requirements.</figcaption>
+          </figure>
+
+          <h3 id="composer-capabilities">Key capabilities in 25.4</h3>
+          <ul>
+            <li><strong>General availability</strong> &mdash; Composer is no longer preview; it’s integrated as a
+              platform feature.</li>
+            <li><strong>Rich input formats</strong> &mdash; Upload TXT, DOC, DOCX, or PDF requirement files.</li>
+            <li><strong>Automatic app plan</strong> &mdash; Composer parses the document into features, personas, and
+              user stories.</li>
+            <li><strong>Business rules suggestions</strong> &mdash; It identifies potential rules and lets you generate
+              expression rules from them.</li>
+            <li><strong>Process diagrams + models</strong> &mdash; Generates swimlane diagrams and starter process
+              models with tasks and gateways.</li>
+            <li><strong>Reports &amp; dashboards</strong> &mdash; Can produce a “Reports &amp; Dashboards Library” page
+              connected to Process HQ.</li>
+          </ul>
+          <p>
+            The net effect: less time manually reading long BRDs and more time refining the logic, data,
+            and UX that actually matter.
+          </p>
+        </section>
+
+        <!-- Agent Studio -->
+        <section class="section" id="agents">
+          <div class="section-label">AI Agents</div>
+          <h2>3. Agent Studio &mdash; autonomous, process-aware agents</h2>
+          <p class="section-lead">
+            Agent Studio lets you create AI agents that use your existing Appian objects to move work forward.
+            Instead of hard-coding every path, you define the goals and let agents figure out the steps.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Agent Studio &mdash; Configuring an AI Agent</div>
+            </div>
+            <img src="https://docs.appian.com/suite/help/25.4/images/rn-25.4/highlights-1.png" alt="Agent Studio" />
+            <figcaption>Defining goals and capabilities for an AI agent in Agent Studio.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Describe an agent’s mission in natural language (e.g., “triage support emails and route to the right
+              queue”).</li>
+            <li>Agents can call into your process models, leverage Data Fabric, and apply business rules.</li>
+            <li>They’re designed for open-ended work like case triage, dispute handling, or complex customer requests.
+            </li>
+            <li>All activity happens with enterprise security, auditing, and governance in mind.</li>
+          </ul>
+        </section>
+
+        <!-- AI in process -->
+        <section class="section" id="ai-process">
+          <div class="section-label">AI in process</div>
+          <h2>4. AI Skills, model selection, and long-running calls</h2>
+          <p class="section-lead">
+            AI inside process models becomes more controllable and robust, especially for long or complex calls.
+          </p>
+
+          <!-- <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">AI Skills &mdash; Model configuration</div>
+            </div>
+            <img src="images/ai-process.png" alt="AI in process configuration" />
+            <figcaption>Choosing models and execution modes for generative AI skills.</figcaption>
+          </figure> -->
+
+          <ul>
+            <li>Admins enable or disable generative models directly in the Admin Console.</li>
+            <li>AI Skills can target specific models from the configured list.</li>
+            <li><strong>Execute Generative AI Skill</strong> supports:
+              <ul>
+                <li>Standard mode for fast responses.</li>
+                <li>Long-running mode for large or complex outputs.</li>
+              </ul>
+            </li>
+            <li>Use <code>a!genAiModels()</code> to discover available models dynamically from UIs or utilities.</li>
+            <li>Override the configured model at runtime in the smart service for per-execution tuning.</li>
+          </ul>
+        </section>
+
+        <!-- Copilot + Chat -->
+        <section class="section" id="copilot">
+          <div class="section-label">AI Copilot & chat</div>
+          <h2>5. AI Copilot, chat field, and conversational UX</h2>
+          <p class="section-lead">
+            AI Copilot becomes more usable in actual apps with a dedicated chat field component and extended region
+            availability.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Chat field in an Appian Interface</div>
+            </div>
+            <img src="images/chat-component.png" alt="Chat field component" />
+            <figcaption>Embedding a conversational assistant directly into an Appian interface.</figcaption>
+          </figure>
+
+          <ul>
+            <li>New <strong>chat field</strong> UI component for building conversational experiences inside interfaces.
+            </li>
+            <li>Use <code>a!callLanguageModel()</code> to send prompts and conversation history to Appian’s language
+              model.</li>
+            <li>Perfect for helpdesk assistants, guided flows, or conversational document Q&amp;A.</li>
+            <li>Enterprise Copilot and smart search expand availability to the Europe (Zurich) region.</li>
+          </ul>
+        </section>
+
+        <!-- Data Fabric & Smart Search -->
+        <section class="section" id="data-fabric">
+          <div class="section-label">Data & search</div>
+          <h2>6. Data Fabric scale, TDE, and smarter search</h2>
+          <p class="section-lead">
+            Data Fabric in 25.4 can handle more rows, more writes, and more secure storage, while smart search and
+            document monitoring improve visibility.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Data Fabric &mdash; Sync and performance</div>
+            </div>
+            <img src="images/data-fabric.png" alt="Data Fabric metrics" />
+            <figcaption>Monitoring record sync scale and throughput in Data Fabric.</figcaption>
+          </figure>
+
+          <h3>Scale & performance</h3>
+          <ul>
+            <li>Record types can sync up to <strong>50 million rows</strong>.</li>
+            <li>Write throughput significantly improved (targeting up to ~30k tx/min in supported workloads).</li>
+            <li>Better concurrency support for high-volume transactional use cases.</li>
+          </ul>
+
+          <h3>Security & resiliency</h3>
+          <ul>
+            <li>Support for <strong>transparent data encryption (TDE)</strong> for synced record data at rest.</li>
+            <li>Option to skip failed smart service syncs and keep using last-good data while you fix issues.</li>
+          </ul>
+
+          <h3>Smart search & documents</h3>
+          <ul>
+            <li>Refined similarity scoring, easier to tune how broad or strict results should be.</li>
+            <li>Configurable tolerance for index failures, improving overall availability.</li>
+            <li>Indices update automatically on incremental syncs.</li>
+            <li>New Documents view shows storage usage and highlights unused files for cleanup.</li>
+          </ul>
+        </section>
+
+        <!-- Process HQ -->
+        <section class="section" id="process-hq">
+          <div class="section-label">Process analytics</div>
+          <h2>7. Process HQ & Copilot-driven reporting</h2>
+          <p class="section-lead">
+            Process HQ grows into a hub where AI, data fabric, and process mining come together for business-friendly
+            reporting.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Process HQ &mdash; AI-assisted report creation</div>
+            </div>
+            <img src="images/process-hq.png" alt="Process HQ dashboard" />
+            <figcaption>Using AI Copilot to create and refine process analytics.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Create reports by describing them in natural language (“Show cases closed per month by region”).</li>
+            <li>AI suggests filters, chart types, and ranges, which you can tweak and save.</li>
+            <li>Reports and dashboards can be deployed with your apps and exposed in sites.</li>
+            <li>More powerful one-to-many reporting, duration filters, and high availability for process insights.</li>
+          </ul>
+        </section>
+
+        <!-- Autoscale -->
+        <section class="section" id="autoscale">
+          <div class="section-label">Platform scale</div>
+          <h2>8. Autoscale & high-volume error handling</h2>
+          <p class="section-lead">
+            Autoscale is about running massive workloads. In 25.4, error diagnostics and control for large process sets
+            improve significantly.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Autoscale &mdash; Error dashboard</div>
+            </div>
+            <img src="images/autoscale.png" alt="Autoscale error dashboard" />
+            <figcaption>Grouping and remediating errors for autoscaled processes.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Error dashboard groups failures by node and type to speed up diagnosis.</li>
+            <li>Fix issues in bulk from monitor mode (modify variables, skip or restart nodes).</li>
+            <li>Cancel queued processes when halting a model at scale, freeing up capacity.</li>
+          </ul>
+        </section>
+
+        <!-- RPA -->
+        <section class="section" id="rpa">
+          <div class="section-label">RPA</div>
+          <h2>9. Robotic Process Automation performance</h2>
+          <p class="section-lead">
+            RPA is tuned for environments with many robots and tasks, making the console faster and easier to work with.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Appian RPA console</div>
+            </div>
+            <img src="images/rpa.png" alt="RPA console" />
+            <figcaption>Managing a large fleet of robots and robotic tasks.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Console load times and robotic task views are significantly faster.</li>
+            <li>Filtering options align more closely with Appian Designer for consistency.</li>
+          </ul>
+        </section>
+
+        <!-- Control Panel & CMS -->
+        <section class="section" id="control-panel">
+          <div class="section-label">Governance</div>
+          <h2>10. Control Panel & Case Management Studio</h2>
+          <p class="section-lead">
+            Object management in Control Panel gets more granular, and Case Management Studio gains new modules.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Control Panel hierarchy items</div>
+            </div>
+            <img src="images/control-panel.png" alt="Control Panel screenshot" />
+            <figcaption>Defining and deploying Control Panel hierarchy items.</figcaption>
+          </figure>
+
+          <h3>Control Panel</h3>
+          <ul>
+            <li>Control Panel hierarchy items are separate objects with versioning and deployment.</li>
+            <li>You can delete unused items to keep the panel tidy.</li>
+            <li>Reorder configuration items to design the workspace layout.</li>
+          </ul>
+
+          <h3>Case Management Studio</h3>
+          <ul>
+            <li>All modules support Case Management Studio 2.0.</li>
+            <li>Case creation via email, including sending from a case and using templates.</li>
+            <li>Knowledge Base module for attaching reference content to case types.</li>
+            <li>Smart Search module for semantic search across cases and tasks.</li>
+          </ul>
+        </section>
+
+        <!-- Interfaces & UX -->
+        <section class="section" id="interfaces">
+          <div class="section-label">Design & UX</div>
+          <h2>11. Interfaces, sites, and overall UX polish</h2>
+          <p class="section-lead">
+            Appian modernizes the interface designer and site experience, making daily design work faster and cleaner.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Interface designer &mdash; New configuration pane</div>
+            </div>
+            <img src="images/interfaces.png" alt="Interface designer" />
+            <figcaption>Reworked configuration pane with tabs and search.</figcaption>
+          </figure>
+
+          <h3>Interface designer</h3>
+          <ul>
+            <li>New configuration pane with tabs (Data, Display, Style, etc.) and built-in search.</li>
+            <li>Better navigation and keyboard accessibility; updated color pickers and controls.</li>
+            <li>File upload component: previews, rename, download, and custom drop zone styling.</li>
+            <li>Async placeholders appear per component/column, not over the entire layout.</li>
+          </ul>
+
+          <h3>Sites & portals</h3>
+          <ul>
+            <li>New header style with modern look and flexible page alignment.</li>
+            <li>Options to hide logo, profile, or settings links when needed.</li>
+            <li>Portals can integrate with Google Analytics or Adobe Analytics.</li>
+            <li>WalkMe can be enabled to guide users directly in sites/portals.</li>
+          </ul>
+        </section>
+
+        <!-- Mobile -->
+        <section class="section" id="mobile">
+          <div class="section-label">Mobile</div>
+          <h2>12. Appian Mobile experience</h2>
+          <p class="section-lead">
+            The mobile client focuses on smoother updates, better offline behavior, and cleaner resume experiences.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Mobile &mdash; Update and offline sync</div>
+            </div>
+            <img src="images/mobile.png" alt="Mobile app experience" />
+            <figcaption>Branded update prompts and improved offline syncing for mobile users.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Branded full-screen prompt when a mobile app update is required.</li>
+            <li>Offline data sync automatically refreshes the current page when complete.</li>
+            <li>Record views now resume where the user left off after backgrounding the app.</li>
+          </ul>
+        </section>
+
+        <!-- Admin -->
+        <section class="section" id="admin">
+          <div class="section-label">Administration</div>
+          <h2>13. Admin Console, users, and locales</h2>
+          <p class="section-lead">
+            Admins get tighter control over AI, richer user data, and extended localization support.
+          </p>
+
+          <figure class="screenshot-block">
+            <div class="screenshot-chrome">
+              <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+              </div>
+              <div class="chrome-title">Admin Console &mdash; AI & localisation</div>
+            </div>
+            <img src="images/admin.png" alt="Admin console" />
+            <figcaption>Configuring available AI models and reviewing locale options in the Admin Console.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Admin Console defines which AI models/profiles are available across the environment.</li>
+            <li>User record and Users page show locale, time zone, last login, and account status.</li>
+            <li>More language/locale options added for European markets and beyond.</li>
+            <li>New <code>data-fabric.csv</code> metrics log to analyze record usage at scale.</li>
+            <li>OAuth 2.0 refresh configuration can request scopes on refresh, supporting modern external APIs.</li>
+          </ul>
+
+          <div class="footer-note">
+            This article is an unofficial, stylized summary of Appian 25.4. For exact wording, edge cases,
+            and the most current information, always refer to Appian’s official documentation.
+          </div>
+        </section>
+      </main>
+</div>
+</div>
+</body>
+
+</html>
