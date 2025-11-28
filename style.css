@@ -635,6 +635,10 @@ ul {
     .timeline-dot {
         left: 15px;
     }
+
+    .awards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 /* Awards Section */
