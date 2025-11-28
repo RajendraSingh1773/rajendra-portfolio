@@ -635,6 +635,16 @@ ul {
     .timeline-dot {
         left: 15px;
     }
+
+    .awards-grid {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .award-item {
+        padding: 0.25rem;
+        min-height: 80px;
+    }
 }
 
 /* Awards Section */
@@ -655,7 +665,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0.25rem;
 }
 
 .award-item:hover {
